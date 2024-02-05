@@ -20,8 +20,6 @@ jobs:
       - name: install requirements
         run: pip install -q -r requirements.txt
 
-      - name: install datafold-sdk
-        run: pip install -q datafold-sdk
 
       - name: dbt deps
         run: dbt deps
