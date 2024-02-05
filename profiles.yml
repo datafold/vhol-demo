@@ -9,7 +9,7 @@ vhol_demo:
       role: DEMO_ROLE
       database: DEMO
       warehouse: INTEGRATION
-      schema: vhol_demo_dev
+      schema: "{{ env_var('SNOWFLAKE_SCHEMA') | as_text }}"
       threads: 24
 
     prod:

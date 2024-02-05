@@ -29,9 +29,6 @@ jobs:
       - name: install requirements
         run: pip install -q -r requirements.txt
 
-      - name: install datafold-sdk
-        run: pip install -q datafold-sdk
-
       - name: dbt deps
         run: dbt deps
 
@@ -41,7 +38,7 @@ jobs:
 
       - name: Grab production manifest from S3
         run: |
-          aws s3 cp s3://datafold-dbt-prod-manifest/manifest.json ./manifest.json
+          aws s3 cp s3://vhol-datafold-dbt-prod-manifest/manifest.json ./manifest.json
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -59,7 +56,7 @@ jobs:
       - name: submit artifacts to datafold
         run: |
           set -ex
-          datafold dbt upload --ci-config-id 26 --run-type ${DATAFOLD_RUN_TYPE} --commit-sha ${GIT_SHA}
+          datafold dbt upload --ci-config-id 146 --run-type ${DATAFOLD_RUN_TYPE} --commit-sha ${GIT_SHA}
         env:
           DATAFOLD_APIKEY: ${{ secrets.DATAFOLD_APIKEY }}
           DATAFOLD_RUN_TYPE: "${{ 'pull_request' }}"
