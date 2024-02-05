@@ -20,7 +20,6 @@ jobs:
       - name: install requirements
         run: pip install -q -r requirements.txt
 
-
       - name: dbt deps
         run: dbt deps
 
