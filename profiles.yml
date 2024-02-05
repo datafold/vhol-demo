@@ -6,10 +6,10 @@ vhol_demo:
       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
       user: "{{ env_var('SNOWFLAKE_USER') | as_text }}"
       password: "{{ env_var('SNOWFLAKE_PASSWORD') | as_text }}"
-      role: "{{ env_var('SNOWFLAKE_ROLE') | as_text }}"
+      role: DEMO_ROLE
       database: DEMO
       warehouse: INTEGRATION
-      schema: "{{ env_var('SNOWFLAKE_SCHEMA') | as_text }}"
+      schema: vhol_demo_dev
       threads: 24
 
     prod:
@@ -17,8 +17,8 @@ vhol_demo:
       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
       user: "{{ env_var('SNOWFLAKE_USER') | as_text }}"
       password: "{{ env_var('SNOWFLAKE_PASSWORD') | as_text }}"
-      role: "{{ env_var('SNOWFLAKE_ROLE') | as_text }}"
+      role: DEMO_ROLE
       database: DEMO
       warehouse: INTEGRATION
-      schema: "vhol_demo_prod"
+      schema: vhol_demo_prod
       threads: 24
