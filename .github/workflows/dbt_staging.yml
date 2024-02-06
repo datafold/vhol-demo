@@ -36,6 +36,8 @@ jobs:
         uses: jwalton/gh-find-current-pr@v1.3.0
         id: findPR
 
+      # TODO: update for your unique S3 bucket name
+      # TODO: update your GitHub secrets to include AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
       - name: Grab production manifest from S3
         run: |
           aws s3 cp s3://vhol-datafold-dbt-prod-manifest/manifest.json ./manifest.json
@@ -46,18 +48,19 @@ jobs:
 
       - name: dbt build
         run: dbt build --select state:modified+ --defer --state ./ --exclude config.materialized:snapshot --profiles-dir ./
-        env:
+        env: # TODO: update your GitHub secrets to include SNOWFLAKE_ACCOUNT, SNOWFLAKE_USER, SNOWFLAKE_PASSWORD, SNOWFLAKE_ROLE
           SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
           SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
           SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
           SNOWFLAKE_SCHEMA: "${{ format('{0}_{1}', 'PR_NUM', steps.findPr.outputs.pr) }}"
 
+      # TODO: replace --ci-config-id 345 with your unique datafold ci config id
       - name: submit artifacts to datafold
         run: |
           set -ex
           datafold dbt upload --ci-config-id 345 --run-type ${DATAFOLD_RUN_TYPE} --commit-sha ${GIT_SHA}
-        env:
+        env: # TODO: update your GitHub secrets to include DATAFOLD_APIKEY
           DATAFOLD_APIKEY: ${{ secrets.DATAFOLD_APIKEY }}
           DATAFOLD_RUN_TYPE: "${{ 'pull_request' }}"
           GIT_SHA: "${{ github.event.pull_request.head.sha }}"

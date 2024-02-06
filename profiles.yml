@@ -1,5 +1,6 @@
 vhol_demo:
   target: dev
+  # TODO: update the following to your Snowflake account
   outputs:
     dev:
       type: snowflake
