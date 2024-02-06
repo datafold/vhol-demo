@@ -55,6 +55,16 @@ dbt ls --target prod
     ]
 }
   ```
+
+  This is an Amazon Web Services (AWS) Identity and Access Management (IAM) policy. IAM policies define permissions for action on resources. In your context, specifically:
+
+1.	"ListObjectsInBucket" - This statement permits the involved IAM identity (User, Group, or Role) the action s3:ListBucket which means they can list the objects in the specified S3 bucket - "vhol-datafold-dbt-prod-manifest".
+
+2.	"AllObjectActions" - This statement allows the IAM identity to perform all operations (﻿s3:*Object) that apply to objects within the S3 bucket "vhol-datafold-dbt-prod-manifest". This could include actions like s3:GetObject, s3:PutObject, s3:DeleteObject etc.
+
+These permissions are only for the specified S3 bucket (arn:aws:s3:::vhol-datafold-dbt-prod-manifest and arn:aws:s3:::vhol-datafold-dbt-prod-manifest/*). Any other buckets and resources are unaffected by this policy.
+
+Please replace the placeholder with your own bucket name for the policy to work as intended.
   
 </details>
 
