@@ -21,5 +21,5 @@ vhol_demo:
       role: DEMO_ROLE
       database: DEMO
       warehouse: INTEGRATION
-      schema: vhol_demo_prod
+      schema: CORE
       threads: 24

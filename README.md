@@ -28,6 +28,12 @@ If you have questions unique to your tech stack, schedule a call with us at: [Da
 
 1. Search the entire repo for `TODO` and replace with your own values
 2. Setup your S3 bucket for Slim CI: [Video Tutorial]()
+
+```bash
+# upload your production manifest file to your S3 bucket
+dbt ls --target prod
+```
+
 3. Set up your GitHub secrets
 4. Commit your changes and push to your remote repository
 5. Run the below to build your dbt project on the `main` branch
