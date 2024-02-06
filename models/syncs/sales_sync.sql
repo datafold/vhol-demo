@@ -18,4 +18,4 @@ WITH org_events AS (
     GROUP BY 1
 )
 
-SELECT * FROM final limit 5
+SELECT * FROM final
