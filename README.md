@@ -22,6 +22,25 @@ If you have questions unique to your tech stack, schedule a call with us at: [Da
 - Automated deployment of changed dbt models to production and their downstream models when pull requests merge into the main production branch
 - Automated staging schema cleanup after a pull request is closed so you don't have schema clutter
 
-## How to set up S3 for Slim CI
+## Getting Started
 
-TODO
+> This guide is self-contained and can run from scratch. Once you get the hang of it, you can repeat the steps for your own dbt project.
+
+1. Search the entire repo for `TODO` and replace with your own values
+2. Setup your S3 bucket for Slim CI: [Video Tutorial]()
+3. Set up your GitHub secrets
+4. Commit your changes and push to your remote repository
+5. Run the below to build your dbt project on the `main` branch
+
+```bash 
+dbt build --target prod
+```
+
+6. Run the below to switch branches and test your CI pipelines
+
+```bash
+git checkout -b feature/your-feature
+```
+
+7. Make some changes to your dbt models and push to your remote repository
+
