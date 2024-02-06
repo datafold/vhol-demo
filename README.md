@@ -26,7 +26,7 @@ If you have questions unique to your tech stack, schedule a call with us at: [Da
 
 > This guide is self-contained and can run from scratch. Once you get the hang of it, you can repeat the steps for your own dbt project.
 
-1. Search the entire repo for `TODO` and replace with your own values
+1. Fork and clone this repo locally to your computer. Search the entire repo for `TODO` and replace with your own values
 2. Setup your S3 bucket for Slim CI: [Video Tutorial](https://www.loom.com/share/d7be198712df4a7cbc12ddac3e529365?sid=fa1d1557-d4c0-45e7-991b-2e7f61bcdf73)
 
 ```bash
