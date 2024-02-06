@@ -42,5 +42,12 @@ dbt build --target prod
 git checkout -b feature/your-feature
 ```
 
-7. Make some changes to your dbt models and push to your remote repository
+7. Make some changes to your dbt models and push to your remote repository. You can copy and paste the examples here and run it locally: [example_dbt_changes](example_dbt_changes/)
 
+```bash
+dbt build
+```
+
+8. See your CI pipeline run and test your changes in your pull request
+
+9. Merge the pull request and watch as your changes are deployed to production and your staging schema is cleaned up
