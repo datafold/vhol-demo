@@ -33,6 +33,30 @@ If you have questions unique to your tech stack, schedule a call with us at: [Da
 # upload your production manifest file to your S3 bucket
 dbt ls --target prod
 ```
+<details>
+  <summary>AWS IAM Policy Code Snippet</summary>
+  
+  ```json
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ListObjectsInBucket",
+            "Effect": "Allow",
+            "Action": ["s3:ListBucket"],
+            "Resource": ["arn:aws:s3:::vhol-datafold-dbt-prod-manifest"] # TODO: replace with your own bucket name
+        },
+        {
+            "Sid": "AllObjectActions",
+            "Effect": "Allow",
+            "Action": "s3:*Object",
+            "Resource": ["arn:aws:s3:::vhol-datafold-dbt-prod-manifest/*"] # TODO: replace with your own bucket name
+        }
+    ]
+}
+  ```
+  
+</details>
 
 3. Set up your GitHub secrets
 4. Commit your changes and push to your remote repository
