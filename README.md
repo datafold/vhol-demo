@@ -22,6 +22,6 @@ If you have questions unique to your tech stack, schedule a call with us at: [Da
 - Automated deployment of changed dbt models to production and their downstream models when pull requests merge into the main production branch
 - Automated staging schema cleanup after a pull request is closed so you don't have schema clutter
 
-##  How to set up S3 for Slim CI
+## How to set up S3 for Slim CI
 
 TODO
