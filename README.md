@@ -30,6 +30,13 @@ If you have questions unique to your tech stack, schedule a call with us at: [Da
 2. Setup your S3 bucket for Slim CI: [Video Tutorial](https://www.loom.com/share/d7be198712df4a7cbc12ddac3e529365?sid=fa1d1557-d4c0-45e7-991b-2e7f61bcdf73)
 
 ```bash
+# setup your virtual environment
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+source venv/bin/activate
+
+# run the production dbt models
 # upload your production manifest file to your S3 bucket
 dbt ls --target prod
 ```
@@ -72,7 +79,7 @@ Please replace the placeholder with your own bucket name for the policy to work 
 4. Commit your changes and push to your remote repository
 5. Run the below to build your dbt project on the `main` branch
 
-```bash 
+```bash
 dbt build --target prod
 ```
 
