@@ -21,6 +21,7 @@ If you have questions unique to your tech stack, schedule a call with us at: [Da
 - [ ] Automated Datafold data diffs in your pull requests if you have a Datafold account
 - [ ] Automated deployment of changed dbt models to production and their downstream models when pull requests merge into the main production branch
 - [ ] Automated staging schema cleanup after a pull request is closed so you don't have schema clutter
+- [ ] You get that sweet sense of satisfaction automating your high quality work
 
 ## Getting Started
 
