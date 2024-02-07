@@ -17,14 +17,15 @@ If you have questions unique to your tech stack, schedule a call with us at: [Da
 
 ## What does success look like?
 
-- Slim CI pipeline that runs and tests only the models that have changed and their downstream models in your pull requests
-- Automated Datafold data diffs in your pull requests if you have a Datafold account
-- Automated deployment of changed dbt models to production and their downstream models when pull requests merge into the main production branch
-- Automated staging schema cleanup after a pull request is closed so you don't have schema clutter
+- [ ] Slim CI pipeline that runs and tests only the models that have changed and their downstream models in your pull requests
+- [ ] Automated Datafold data diffs in your pull requests if you have a Datafold account
+- [ ] Automated deployment of changed dbt models to production and their downstream models when pull requests merge into the main production branch
+- [ ] Automated staging schema cleanup after a pull request is closed so you don't have schema clutter
 
 ## Getting Started
 
 > This guide is self-contained and can run from scratch. Once you get the hang of it, you can repeat the steps for your own dbt project.
+> For those that don't have permissions to configure AWS S3, you can still run the CI pipeline and see the results in your pull requests. You just won't be able to utilize [Slim CI](https://docs.getdbt.com/best-practices/best-practice-workflows#run-only-modified-models-to-test-changes-slim-ci). During the VHOL, I'll walk you through how to ignore the AWS S3 setup and still get the most out of your CI pipeline.
 
 1. Fork and clone this repo locally to your computer. Search the entire repo for `TODO` and replace with your own values
 2. Setup your S3 bucket for Slim CI: [Video Tutorial](https://www.loom.com/share/d7be198712df4a7cbc12ddac3e529365?sid=fa1d1557-d4c0-45e7-991b-2e7f61bcdf73)
