@@ -36,7 +36,7 @@ If you have questions unique to your tech stack, schedule a call with us at: [Da
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-source venv/bin/activate
+source venv/bin/activate 
 ```
 <details>
   <summary>AWS IAM Policy Code Snippet</summary>
