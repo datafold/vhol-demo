@@ -32,9 +32,9 @@ jobs:
       - name: dbt deps
         run: dbt deps
 
-      - name: Find Current Pull Request
-        uses: jwalton/gh-find-current-pr@v1.3.0
-        id: findPR
+      # - name: Find Current Pull Request
+      #   uses: jwalton/gh-find-current-pr@v1.3.0
+      #   id: findPR
 
       # TODO: update for your unique S3 bucket name
       # TODO: update your GitHub secrets to include AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
@@ -53,7 +53,7 @@ jobs:
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
           SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
           SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
-          SNOWFLAKE_SCHEMA: "${{ format('{0}_{1}', 'PR_NUM', steps.findPr.outputs.pr) }}"
+          SNOWFLAKE_SCHEMA: "${{ format('{0}_{1}', 'PR_NUM', github.event.pull_request.number) }}"
 
       # TODO: comment this step out if you don't have Datafold Cloud yet
       # TODO: replace --ci-config-id 345 with your unique datafold ci config id
