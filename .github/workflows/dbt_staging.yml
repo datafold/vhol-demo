@@ -53,7 +53,7 @@ jobs:
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
           SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
           SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
-          SNOWFLAKE_SCHEMA: "${{ format('{0}_{1}', 'PR_NUM', steps.findPr.outputs.pr) }}"
+          SNOWFLAKE_SCHEMA: "${{ format('{0}_{1}', 'PR_NUM', github.event.pull_request.number) }}"
 
       # TODO: comment this step out if you don't have Datafold Cloud yet
       # TODO: replace --ci-config-id 345 with your unique datafold ci config id
